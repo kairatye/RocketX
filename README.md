@@ -6,7 +6,7 @@ SpaceX
 Интерфейс: UIKit, UIScrollView, UICollectionView, UITableView, UIPageViewController, вся вёрстка кодом.
 Работа с сетью: URLSession.
 Архитектура: MVC.
-API: [link] (https://api.spacexdata.com/v4/rockets), [link] (https://api.spacexdata.com/v4/launches).
+API: [rockets](https://api.spacexdata.com/v4/rockets), [launches](https://api.spacexdata.com/v4/launches) .
 
 ## Screenshots
 ![SpaceX](./SpaceX.gif)
