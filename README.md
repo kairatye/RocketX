@@ -3,9 +3,9 @@ SpaceX
 
 Приложение показывает информацию о космических ракетах SpaceX и список их запусков.
 
-* Интерфейс: UIKit, UIScrollView, UICollectionView, UITableView, UIPageViewController, вся вёрстка кодом.
-* Работа с сетью: URLSession.
-* Архитектура: MVC.
+* Интерфейс: UIKit, UIScrollView, UICollectionView, UITableView, UIPageViewController, вся вёрстка кодом. 
+* Работа с сетью: URLSession. 
+* Архитектура: MVC. 
 * API: [rockets](https://api.spacexdata.com/v4/rockets), [launches](https://api.spacexdata.com/v4/launches).
 
 ## Screenshots
@@ -16,7 +16,6 @@ SpaceX
 Стартовый экран приложения, на которой располагается случайное изображение космической ракеты, её наименование и вся необходимая информация. Напротив названия ракеты располагается кнопка, при нажатии на которую презентуется модально Экран 3. В нижней части экрана располагается кнопка "Посмотреть запуски", при нажатии на которую происходит переход на Экран 2.
 
 <img src="./InitialScreen.png" width="295" height="640">
-
 
 ## Экран 2
 #### Список запусков космической ракеты
