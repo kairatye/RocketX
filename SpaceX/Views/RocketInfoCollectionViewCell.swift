@@ -48,7 +48,6 @@ final class RocketInfoCollectionViewCell: UICollectionViewCell {
             valueLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewMetrics.topVerticalSpacing),
             valueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewMetrics.horizontalSpacing),
             valueLabel.bottomAnchor.constraint(equalTo: unitLabel.topAnchor),
-//            valueLabel.heightAnchor.constraint(equalToConstant: 24.0),
             unitLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: ViewMetrics.horizontalSpacing),
             unitLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -ViewMetrics.horizontalSpacing),
             unitLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -ViewMetrics.bottomVerticalSpacing),
@@ -68,19 +67,29 @@ final class RocketInfoCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: Rocket, indexPath: IndexPath) {
+        let heightUnit = SettingsStorage.shared.getHeightUnit()
+        let diameterUnit = SettingsStorage.shared.getDiameterUnit()
+        let massUnit = SettingsStorage.shared.getMassUnit()
+        let payloadUnit = SettingsStorage.shared.getPayloadUnit()
+        
+        let height = heightUnit == "m" ? String(model.height.meters ?? 0.0) : String(model.height.feet ?? 0.0)
+        let diameter = diameterUnit == "m" ? String(model.diameter.meters ?? 0.0) : String(model.diameter.feet ?? 0.0)
+        let mass = massUnit == "kg" ? String(model.mass.kg) : String(model.mass.lb)
+        let payloadWeight = payloadUnit == "kg" ? String(model.payloadWeights[0].kg) : String(model.payloadWeights[0].lb)
+        
         switch indexPath.row {
         case 0:
-            valueLabel.text = String(model.height.feet ?? 0)
-            unitLabel.text = "Высота, ft"
+            valueLabel.text = height
+            unitLabel.text = "Высота, \(heightUnit)"
         case 1:
-            valueLabel.text = String(model.diameter.feet ?? 0)
-            unitLabel.text = "Диаметр, ft"
+            valueLabel.text = diameter
+            unitLabel.text = "Диаметр, \(diameterUnit)"
         case 2:
-            valueLabel.text = String(model.mass.lb)
-            unitLabel.text = "Масса, lb"
+            valueLabel.text = mass
+            unitLabel.text = "Масса, \(massUnit)"
         case 3:
-            valueLabel.text = String(model.payloadWeights[0].lb)
-            unitLabel.text = "Нагрузка, lb"
+            valueLabel.text = payloadWeight
+            unitLabel.text = "Нагрузка, \(payloadUnit)"
         default: break
         }
     }

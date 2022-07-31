@@ -12,6 +12,10 @@
 		AE1FE061288330FB00263C5F /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1FE060288330FB00263C5F /* Launch.swift */; };
 		AE270F182889406500A6E085 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE270F172889406500A6E085 /* Constants.swift */; };
 		AE270F1E2889475600A6E085 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE270F1D2889475600A6E085 /* URLSession+Extension.swift */; };
+		AE4F340D2896E3B100D8E847 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F340C2896E3B100D8E847 /* UIView+Extension.swift */; };
+		AE4F340F2896E40300D8E847 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F340E2896E40300D8E847 /* SettingsViewController.swift */; };
+		AE4F34112896E44E00D8E847 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F34102896E44E00D8E847 /* SettingsTableViewCell.swift */; };
+		AE4F34132896E47A00D8E847 /* SettingsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4F34122896E47A00D8E847 /* SettingsStorage.swift */; };
 		AE9206072882BA2D003AA2EE /* GlobalMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9206062882BA2D003AA2EE /* GlobalMetrics.swift */; };
 		AE9206092882BB19003AA2EE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9206082882BB19003AA2EE /* UIColor+Extension.swift */; };
 		AE92060B2882E2C4003AA2EE /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92060A2882E2C4003AA2EE /* LaunchesViewController.swift */; };
@@ -31,6 +35,10 @@
 		AE1FE060288330FB00263C5F /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		AE270F172889406500A6E085 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AE270F1D2889475600A6E085 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		AE4F340C2896E3B100D8E847 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		AE4F340E2896E40300D8E847 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AE4F34102896E44E00D8E847 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		AE4F34122896E47A00D8E847 /* SettingsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStorage.swift; sourceTree = "<group>"; };
 		AE9206062882BA2D003AA2EE /* GlobalMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMetrics.swift; sourceTree = "<group>"; };
 		AE9206082882BB19003AA2EE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AE92060A2882E2C4003AA2EE /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
@@ -57,12 +65,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE9206052882BA1D003AA2EE /* Helpers */ = {
+		AE4F34142896F56700D8E847 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				AE270F1D2889475600A6E085 /* URLSession+Extension.swift */,
-				AE9206062882BA2D003AA2EE /* GlobalMetrics.swift */,
 				AE9206082882BB19003AA2EE /* UIColor+Extension.swift */,
+				AE4F340C2896E3B100D8E847 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE9206052882BA1D003AA2EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AE9206062882BA2D003AA2EE /* GlobalMetrics.swift */,
 				AE270F172889406500A6E085 /* Constants.swift */,
 			);
 			path = Helpers;
@@ -90,6 +106,7 @@
 				AED6E035287D7C8D004F4D19 /* Models */,
 				AE9968E1287C849600E9DF10 /* Controllers */,
 				AE9968E0287C846B00E9DF10 /* Views */,
+				AE4F34142896F56700D8E847 /* Extensions */,
 				AE9206052882BA1D003AA2EE /* Helpers */,
 				AE9968C4287C0A8300E9DF10 /* AppDelegate.swift */,
 				AE9968CD287C0A8500E9DF10 /* Assets.xcassets */,
@@ -106,6 +123,7 @@
 				AE103165287CB4A700C1F1D8 /* StageView.swift */,
 				AED6E040287D999D004F4D19 /* RocketInfoView.swift */,
 				AE92060C28830463003AA2EE /* LaunchesTableViewCell.swift */,
+				AE4F34102896E44E00D8E847 /* SettingsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +134,7 @@
 				AE9968C8287C0A8300E9DF10 /* RocketInfoViewController.swift */,
 				AE92060A2882E2C4003AA2EE /* LaunchesViewController.swift */,
 				AE11D8CE288AEE0F00DB5125 /* RocketPageViewController.swift */,
+				AE4F340E2896E40300D8E847 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,6 +144,7 @@
 			children = (
 				AED6E036287D7C9D004F4D19 /* Rocket.swift */,
 				AE1FE060288330FB00263C5F /* Launch.swift */,
+				AE4F34122896E47A00D8E847 /* SettingsStorage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,14 +222,18 @@
 				AE9968DD287C5E2C00E9DF10 /* RocketInfoCollectionViewCell.swift in Sources */,
 				AE9968C9287C0A8300E9DF10 /* RocketInfoViewController.swift in Sources */,
 				AED6E041287D999D004F4D19 /* RocketInfoView.swift in Sources */,
+				AE4F340D2896E3B100D8E847 /* UIView+Extension.swift in Sources */,
 				AE9206092882BB19003AA2EE /* UIColor+Extension.swift in Sources */,
 				AE9968C5287C0A8300E9DF10 /* AppDelegate.swift in Sources */,
 				AE92060D28830463003AA2EE /* LaunchesTableViewCell.swift in Sources */,
+				AE4F340F2896E40300D8E847 /* SettingsViewController.swift in Sources */,
 				AE270F182889406500A6E085 /* Constants.swift in Sources */,
 				AE103166287CB4A700C1F1D8 /* StageView.swift in Sources */,
 				AE11D8CF288AEE0F00DB5125 /* RocketPageViewController.swift in Sources */,
+				AE4F34112896E44E00D8E847 /* SettingsTableViewCell.swift in Sources */,
 				AE92060B2882E2C4003AA2EE /* LaunchesViewController.swift in Sources */,
 				AE270F1E2889475600A6E085 /* URLSession+Extension.swift in Sources */,
+				AE4F34132896E47A00D8E847 /* SettingsStorage.swift in Sources */,
 				AE9206072882BA2D003AA2EE /* GlobalMetrics.swift in Sources */,
 				AED6E037287D7C9D004F4D19 /* Rocket.swift in Sources */,
 				AE1FE061288330FB00263C5F /* Launch.swift in Sources */,

@@ -33,6 +33,7 @@ class RocketInfoViewController: UIViewController {
         let view = RocketInfoView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
+        view.settingsButton.addTarget(self, action: #selector(showSettings), for: .touchUpInside)
         return view
     }()
     
@@ -95,15 +96,20 @@ class RocketInfoViewController: UIViewController {
         }
     }
     
-    @objc func showLaunches() {
+    @objc private func showLaunches() {
         let launchesViewController = LaunchesViewController(rocketName: rockets[rocketId].name, rocketId: rockets[rocketId].id)
 
         navigationController?.pushViewController(launchesViewController, animated: true)
     }
+    
+    @objc private func showSettings() {
+        let settingsViewController = SettingsViewController()
+        
+        present(settingsViewController, animated: true)
+    }
 
     private func setupView() {
         view.addSubview(scrollView)
-        
         rocketInfoView.parametersCollectionView.register(RocketInfoCollectionViewCell.self, forCellWithReuseIdentifier: RocketInfoCollectionViewCell.reuseIdentifier)
         rocketInfoView.parametersCollectionView.dataSource = self
     }
@@ -114,6 +120,7 @@ class RocketInfoViewController: UIViewController {
         firstStageView.configureFirstStage(with: rockets[rocketId])
         secondStageView.configureSecondStage(with: rockets[rocketId])
     }
+    
     private func configureImage() {
         DispatchQueue.global().async {
             guard let imageURL = URL(string: self.rockets[self.rocketId].flickrImages.randomElement() ?? "falcon1") else { return }
@@ -170,7 +177,6 @@ extension RocketInfoViewController: UICollectionViewDataSource {
         }
         
         cell.configure(with: rockets[rocketId], indexPath: indexPath)
-
         return cell
     }
 }

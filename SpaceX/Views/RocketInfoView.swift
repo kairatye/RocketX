@@ -23,8 +23,8 @@ class RocketInfoView: UIView {
         return label
     }()
     
-    private let settingsButton: UIButton = {
-        let button = UIButton(type: .custom)
+    let settingsButton: UIButton = {
+        let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "settings"), for: .normal)
         button.tintColor = GlobalMetrics.Colors.basicColor
@@ -157,7 +157,6 @@ class RocketInfoView: UIView {
         if let launchCost = launchCost {
             launchCostValueLabel.text = "\(launchCost) млн"
         }
-//        launchCostValueLabel.text = String(model.costPerLaunch)
     }
     
     private func setupView() {
@@ -190,14 +189,5 @@ class RocketInfoView: UIView {
             launchCostStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -GlobalMetrics.horizontalSpacing),
             launchCostLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -GlobalMetrics.verticalSpacing)
         ])
-    }
-}
-
-extension UIView {
-    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
     }
 }
